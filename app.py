@@ -6,7 +6,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-randclf = pickle.load(open(os.path.join(BASE_DIR, 'model.pkl'), 'rb'))
+mc = pickle.load(open(os.path.join(BASE_DIR, 'model.pkl'), 'rb'))
 mx = pickle.load(open(os.path.join(BASE_DIR, 'minmaxscaler.pkl'), 'rb'))
 sc = pickle.load(open(os.path.join(BASE_DIR, 'scandscaler.pkl'), 'rb'))
 
