@@ -2,11 +2,13 @@ import numpy as np
 import streamlit as st
 import pickle
 
+import os
 
-randclf = pickle.load(open('model.pkl', 'rb'))
-mx = pickle.load(open('minmaxscaler.pkl', 'rb'))
-sc = pickle.load(open('scandscaler.pkl', 'rb'))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+randclf = pickle.load(open(os.path.join(BASE_DIR, 'model.pkl'), 'rb'))
+mx = pickle.load(open(os.path.join(BASE_DIR, 'minmaxscaler.pkl'), 'rb'))
+sc = pickle.load(open(os.path.join(BASE_DIR, 'scandscaler.pkl'), 'rb'))
 
 def recommendation(n, p, k, temperature, humidity, ph, rainfall):
     crop_dict = {
